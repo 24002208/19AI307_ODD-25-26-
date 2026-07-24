@@ -21,8 +21,8 @@ To write a Java program demonstrating Inheritance and Aggregation by creating su
  ```
 /*
 Program to implement a Inheritance and Aggregation using Java
-Developed by: SARANYA AV
-RegisterNumber: 212224040297
+Developed by:  DHAMINI S
+RegisterNumber: 212224040064
 */
 ```
 
@@ -165,8 +165,8 @@ To write a Java program demonstrating runtime polymorphism using method overridi
  ```
 /*
 Program to implement a Polymorphism using Java
-Developed by: SARANYA AV
-RegisterNumber: 212224040297
+Developed by:  DHAMINI S
+RegisterNumber: 212224040064
 */
 ```
 
@@ -259,8 +259,8 @@ To implement Abstraction in Java by defining an abstract class with abstract met
  ```
 /*
 Program to implement a Abstraction using Java
-Developed by: SARANYA AV
-RegisterNumber:212224040297 
+Developed by:  DHAMINI S
+RegisterNumber: 212224040064
 */
 ```
 
@@ -370,8 +370,8 @@ StrictJudge: WIN if diff ≥ 10, DRAW if < 10
  ```
 /*
 Program to implement a Interface using Java
-Developed by: SARANYA AV
-RegisterNumber:212224040297
+Developed by:  DHAMINI S
+RegisterNumber: 212224040064
 */
 ```
 
@@ -467,8 +467,8 @@ To write a Java program that demonstrates the use of an Inner Class and how it c
  ```
 /*
 Program to implement a InnerClass using Java
-Developed by: SARANYA AV
-RegisterNumber:212224040297
+Developed by:  DHAMINI S
+RegisterNumber: 212224040064
 */
 ```
 

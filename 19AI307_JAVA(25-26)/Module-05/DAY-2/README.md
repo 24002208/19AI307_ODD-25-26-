@@ -1,22 +1,26 @@
 
-# Ex.No:5(C)  FILE HANDLING USING JAVA
-## QUESTION:
-Write a program to count the number of words in a file.
+# Ex.No:5(B) SERIALIZATION AND DESERIALIZATION 
 
+## QUESTION:
+Write a Java program to read a string from the user, compress it in memory using ByteArrayOutputStream + GZIPOutputStream, and then decompress it back using ByteArrayInputStream + GZIPInputStream.
 
 
 ## AIM:
-To write a Java program that reads a text file and counts the number of words present in the file using file handling mechanisms.
+
+To write a Java program that reads a string from the user, compresses it using GZIP compression, and then decompresses it back to its original form.
 
 ## ALGORITHM :
 1.	Start the program.
 2.	Import the necessary package 'java.util'
-3.	Create a File object to reference the input text file.
-4. Use Scanner or FileReader to read the contents of the file.
-5. Split the file content into words using space or delimiter.
-6. Count the total number of words.
-7. Display the word count.
-8. End the program.
+3.	Read a string from the user using Scanner.
+4. Create a ByteArrayOutputStream object to hold compressed data.
+5. Wrap it with GZIPOutputStream and write the user string into it to perform compression.
+6. Convert compressed data into a byte array.
+7. Create a ByteArrayInputStream object using the compressed byte array.
+8. Wrap it with GZIPInputStream to decompress the content.
+9. Read decompressed bytes and convert them back into the original string.
+10. Display original, compressed size, and decompressed results.
+11. End the program.
 
 
 
@@ -25,7 +29,7 @@ To write a Java program that reads a text file and counts the number of words pr
 ## PROGRAM:
  ```
 /*
-Program to implement a File Handling using Java
+Program to implement a Serialization and Deserialization using Java
 Developed by: DHAMINI S
 RegisterNumber:212224040064
 */
@@ -34,34 +38,51 @@ RegisterNumber:212224040064
 ## SOURCE CODE:
 ```
 import java.io.*;
-import java.util.*;
+import java.util.Scanner;
+import java.util.zip.GZIPOutputStream;
+import java.util.zip.GZIPInputStream;
 
-public class WordCountInFile {
+public class GZIPMemoryExample {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         try {
-            String content = sc.nextLine();
-            FileWriter fw = new FileWriter("input.txt");
-            fw.write(content);
-            fw.close();
-            BufferedReader br = new BufferedReader(new FileReader("input.txt"));
+            String input = scanner.nextLine();
+
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            GZIPOutputStream gzipOut = new GZIPOutputStream(baos);
+            gzipOut.write(input.getBytes("UTF-8"));
+            gzipOut.close(); 
+
+            byte[] compressedData = baos.toByteArray();
+            System.out.println("Compressed data (bytes):");
+            for (byte b : compressedData) {
+                System.out.print(b + " ");
+            }
+            System.out.println("\nTotal bytes: " + compressedData.length);
+
+            ByteArrayInputStream bais = new ByteArrayInputStream(compressedData);
+            GZIPInputStream gzipIn = new GZIPInputStream(bais);
+            InputStreamReader reader = new InputStreamReader(gzipIn, "UTF-8");
+            BufferedReader br = new BufferedReader(reader);
+
+            StringBuilder decompressed = new StringBuilder();
             String line;
-            int wordCount = 0;
             while ((line = br.readLine()) != null) {
-                String[] words = line.trim().split("\\s+");
-                if (!line.trim().isEmpty()) {
-                    wordCount += words.length;
-                }
+                decompressed.append(line);
             }
 
+            System.out.println("\nDecompressed string:");
+            System.out.println(decompressed.toString());
+
             br.close();
-            System.out.println("Number of words in the file: " + wordCount);
+            gzipIn.close();
+            bais.close();
 
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         } finally {
-            sc.close();
+            scanner.close();
         }
     }
 }
@@ -73,8 +94,8 @@ public class WordCountInFile {
 
 
 ## OUTPUT:
-![java53](https://github.com/ABINAYA-27-76/19AI307_ODD-25-26-/blob/6117fd83efb67a2066ea2c15c1ee8c4e274b4538/19AI307_JAVA(25-26)/Module-05/DAY-3/java53.png)
+![java52](https://github.com/ABINAYA-27-76/19AI307_ODD-25-26-/blob/4629176025934c52170b68fd2b511f5724754685/19AI307_JAVA(25-26)/Module-05/DAY-2/java52.png)
 
 
 ## RESULT:
-Thus, the Java program that counts the number of words in a file using file handling was successfully executed.
+Thus, the Java program to compress and decompress a string using ByteArrayOutputStream, GZIPOutputStream, ByteArrayInputStream, and GZIPInputStream was successfully implemented and executed.

@@ -25,8 +25,8 @@ To write a Java program that demonstrates calling one method from another method
  ```
 /*
 Program to implement a Methods using Java
-Developed by: SARANYA AV
-RegisterNumber: 212224040297
+Developed by:  DHAMINI S
+RegisterNumber: 212224040064
 */
 ```
 

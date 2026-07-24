@@ -28,8 +28,8 @@ To write a Java program that demonstrates the concept of Class and Object using 
  ```
 /*
 Program to implement a Class and Objects using Java
-Developed by: SARANYA AV
-RegisterNumber:212224040297
+Developed by:  DHAMINI S
+RegisterNumber: 212224040064
 */
 ```
 
@@ -107,8 +107,8 @@ To write a Java program that demonstrates calling one method from another method
  ```
 /*
 Program to implement a Methods using Java
-Developed by: SARANYA AV
-RegisterNumber:212224040297
+Developed by:  DHAMINI S
+RegisterNumber: 212224040064
 */
 ```
 
@@ -172,8 +172,8 @@ To write a Java program that demonstrates the use of access specifiers, specific
  ```
 /*
 Program to implement a Access Specifiers using Java
-Developed by: SARANYA AV
-RegisterNumber:212224040297
+Developed by:  DHAMINI S
+RegisterNumber: 212224040064
 */
 ```
 
@@ -255,8 +255,8 @@ To write a Java program to demonstrate variable scope and the use of a construct
  ```
 /*
 Program to implement a Variable scope and Constructor using Java
-Developed by:SARANYA AV
-RegisterNumber:212224040297
+Developed by:  DHAMINI S
+RegisterNumber: 212224040064
 */
 ```
 
@@ -331,8 +331,8 @@ To write a Java program that demonstrates the use of access modifiers through st
  ```
 /*
 Program to implement a Access Modifiers using Java
-Developed by: SARANYA AV
-RegisterNumber:212224040297
+Developed by:  DHAMINI S
+RegisterNumber: 212224040064
 */
 ```
 

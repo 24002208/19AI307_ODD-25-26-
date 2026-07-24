@@ -1,29 +1,28 @@
 
-# Ex.No:3(D)    INTERFACE 
+# Ex.No:3(C) ABSTRACTION
 
 ## QUESTION:
-Each judge uses different criteria to score fighters. Based on points, the judge will declare “WIN”, “LOSE” or “DRAW”.
+A group of researchers receives mysterious numerical sequences believed to be sent by intelligent alien life. To decode them, scientists have built intelligent SignalAgents that follow abstract processing rules. Each agent listens to the numbers differently.
 
-LenientJudge: WIN if diff ≥ 5, DRAW if < 5
+Your task is to create a system where a base abstract class SignalAgent declares:
 
-StrictJudge: WIN if diff ≥ 10, DRAW if < 10
 ## AIM:
-
+To implement Abstraction in Java by defining an abstract class with abstract methods and providing different implementations in derived subclasses.
 
 ## ALGORITHM :
 1.	Start the program.
 2.	Import the necessary package 'java.util'
-3.	Create an interface Judge with an abstract method getResult(int fighter1, int fighter2).
-4. Create two classes LenientJudge and StrictJudge implementing the interface and applying different scoring criteria.
-5. Accept points scored by two fighters from the user.
-6. Accept judge type from the user and invoke the respective implementation.
-7. Display the result as WIN, LOSE, or DRAW.
-8.Stop the program.
+3.	Create an abstract class SignalAgent with an abstract method processNumbers(int[]).
+4. Create subclasses SumAgent and AverageAgent that extend the base class and provide method implementations.
+5. Accept a numerical sequence from the user and store it in an array.
+6. Allow the user to select which type of agent to use for processing.
+7. Display the processed result.
+8. End the program.
 
 ## PROGRAM:
  ```
 /*
-Program to implement a Interface using Java
+Program to implement a Abstraction using Java
 Developed by: Dhamini S
 RegisterNumber:212224040064
 */
@@ -33,52 +32,67 @@ RegisterNumber:212224040064
 ```
 import java.util.*;
 
-interface Judge {
-    String decide(int p1, int p2);
+abstract class SignalAgent {
+    abstract int decodeSignal(int[] signal);
 }
 
-class LenientJudge implements Judge {
-    public String decide(int p1, int p2) {
-        int diff = Math.abs(p1 - p2);
-        if (p1 > p2 && diff >= 5)
-            return "WIN";
-        else if (p2 > p1 && diff >= 5)
-            return "LOSE";
-        else
-            return "DRAW";
+class PrimeAgent extends SignalAgent {
+    boolean isPrime(int n) {
+        if (n <= 1) return false;
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0)
+                return false;
+        }
+        return true;
+    }
+
+    @Override
+    int decodeSignal(int[] signal) {
+        int sum = 0;
+        for (int num : signal) {
+            if (isPrime(num))
+                sum += num;
+        }
+        return sum;
     }
 }
 
-class StrictJudge implements Judge {
-    public String decide(int p1, int p2) {
-        int diff = Math.abs(p1 - p2);
-        if (p1 > p2 && diff >= 10)
-            return "WIN";
-        else if (p2 > p1 && diff >= 10)
-            return "LOSE";
-        else
-            return "DRAW";
+class MirrorAgent extends SignalAgent {
+    @Override
+    int decodeSignal(int[] signal) {
+        int n = signal.length;
+        for (int i = 0; i < n / 2; i++) {
+            if (signal[i] != signal[n - 1 - i]) {
+             
+                return -1;
+            }
+        }
+        return 1;
     }
 }
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int p1 = sc.nextInt();
-        int p2 = sc.nextInt();
-        int judgeType = sc.nextInt();
-
-        Judge judge;
-        if (judgeType == 1)
-            judge = new LenientJudge();
-        else if (judgeType == 2)
-            judge = new StrictJudge();
-        else {
-            System.out.println("Invalid judge type");
-            return;
+        int n = sc.nextInt();
+        int[] signal = new int[n];
+        for (int i = 0; i < n; i++)
+            signal[i] = sc.nextInt();
+        int type = sc.nextInt();
+        
+        SignalAgent agent;
+        
+        if (type == 1) {
+            agent = new PrimeAgent();
+            System.out.println(agent.decodeSignal(signal));
+        } else if (type == 2) {
+            agent = new MirrorAgent();
+            int result = agent.decodeSignal(signal);
+            if (result == 1)
+                System.out.println("BALANCED");
+            else
+                System.out.println("BROKEN");
         }
-
-        System.out.println(judge.decide(p1, p2));
     }
 }
 ```
@@ -87,12 +101,11 @@ public class Main {
 
 
 
-
-
 ## OUTPUT:
-![java34](https://github.com/ABINAYA-27-76/19AI307_ODD-25-26-/blob/564ba08ef73efc7e73a0883948f623cfa5b0ee65/19AI307_JAVA(25-26)/Module-03/DAY-4/java34.png)
 
+![java33](https://github.com/ABINAYA-27-76/19AI307_ODD-25-26-/blob/838b2936e04f552789e71372bc8cc875126469d1/19AI307_JAVA(25-26)/Module-03/DAY-3/java33.png)
 
 ## RESULT:
-Thus, the Java program demonstrating Interface implementation using different judging criteria was executed successfully.
+Thus, the Java program demonstrating Abstraction using an abstract class and derived classes was executed successfully.
+
 

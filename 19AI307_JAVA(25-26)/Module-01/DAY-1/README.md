@@ -107,8 +107,8 @@ To write a Java program that uses conditional statements to determine the state 
  ```
 /*
 Program to implement a conditional statement using Java
-Developed by: SARANYA AV
-RegisterNumber: 212224040297
+Developed by:  DHAMINI S
+RegisterNumber: 212224040064
 */
 ```
 
@@ -171,8 +171,8 @@ To write a Java program using looping statements to print a right-angled triangl
  ```
 /*
 Program to implement a Looping Statement using Java
-Developed by:  SARANYA AV
-RegisterNumber:212224040297
+Developed by:  DHAMINI S
+RegisterNumber: 212224040064
 */
 ```
 
@@ -233,8 +233,8 @@ To write a Java program that finds the index position of a specified element fro
  ```
 /*
 Program to implement a Array concept using Java
-Developed by:  SARANYA AV
-RegisterNumber: 212224040297
+Developed by:  DHAMINI S
+RegisterNumber: 212224040064
 */
 ```
 
@@ -312,8 +312,8 @@ To write a Java program to compute the power of a number using the Math.pow() fu
  ```
 /*
 Program to implement a Strings and Math Function using Java
-Developed by:  SARANYA AV
-RegisterNumber:212224040297
+Developed by:  DHAMINI S
+RegisterNumber: 212224040064
 */
 ```
 
